@@ -11,7 +11,7 @@ A semantic biomaterials discovery engine that maps biological species to extract
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
 - Required env: `DATABASE_URL` — Postgres connection string
-- Required env: `AI_INTEGRATIONS_GEMINI_BASE_URL`, `AI_INTEGRATIONS_GEMINI_API_KEY` — auto-provisioned by Replit Gemini AI Integration
+- Required env: `AI_INTEGRATIONS_GEMINI_BASE_URL`, `AI_INTEGRATIONS_GEMINI_API_KEY` — auto-provisioned by Base44 Gemini AI Integration
 
 ## Stack
 
@@ -19,7 +19,7 @@ A semantic biomaterials discovery engine that maps biological species to extract
 - Frontend: React 19 + Vite, Tailwind CSS v4, Wouter router, TanStack Query, Framer Motion
 - API: Express 5
 - DB: PostgreSQL + Drizzle ORM
-- AI: Google Gemini (`gemini-2.5-flash`) via Replit AI Integrations proxy — no user API key needed
+- AI: Google Gemini (`gemini-2.5-flash`) via Base44 AI Integrations proxy — no user API key needed
 - Validation: Zod (v3), drizzle-zod
 - API codegen: Orval (from OpenAPI spec in `lib/api-spec/openapi.yaml`)
 - Build: esbuild (CJS bundle); `@google/genai` must NOT be in esbuild externals (removed `@google/*` glob)
@@ -60,7 +60,7 @@ _Populate as you build — explicit user instructions worth remembering across s
 - After any change to `lib/api-spec/openapi.yaml`, always re-run `pnpm --filter @workspace/api-spec run codegen` before touching the frontend or backend.
 - Do NOT add `@google/*` back to the esbuild external list — it will break the Gemini integration at runtime.
 - The `zod.looseObject` API exists in Zod v4 only. The workspace uses Zod v3 (`^3.25.76`). Avoid bare `type: object` without properties in the OpenAPI spec (Orval 8.x emits `looseObject` for those).
-- Drizzle `push` works for dev schema changes. Production uses Replit's publish-time diff flow.
+- Drizzle `push` works for dev schema changes. Production uses Base 44's publish-time diff flow.
 
 ## Pointers
 
