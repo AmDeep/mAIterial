@@ -1,0 +1,1 @@
+{"version":3,"file":"claimInput.d.ts","sourceRoot":"","sources":["../../../src/generated/types/claimInput.ts"],"names":[],"mappings":"AAAA;;;;;;GAMG;AAEH,MAAM,WAAW,UAAU;IACzB,SAAS,EAAE,MAAM,CAAC;IAClB,UAAU,EAAE,MAAM,CAAC;IACnB,UAAU,EAAE,MAAM,CAAC;IACnB,YAAY,EAAE,MAAM,CAAC;IACrB,gBAAgB,EAAE,MAAM,CAAC;IACzB,KAAK,CAAC,EAAE,MAAM,CAAC;CAChB"}
